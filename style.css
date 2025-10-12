@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+button {
+  background: none;
+  border: 2px solid rgb(199, 187, 187);
+  padding: 5px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  cursor: pointer;
+}
+button:hover {
+  border-color: aqua;
+  color: aqua;
+}
+input[type="text"],
+textarea {
+  border: 2px solid rgb(184, 182, 182);
+  background: none;
+  border-radius: 5px;
+}
+input[type="text"]:hover,
+textarea:hover {
+  border-color: aqua;
+  color: aqua;
+}
+header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.text-container {
+  background: white;
+  display: flex;
+  z-index: 1;
+  border: 2px solid whitesmoke;
+}
+.text {
+  margin: auto 0;
+}
+.text h1 {
+  line-height: 100px;
+}
+.text p {
+  line-height: 26px;
+}
+.header-img img {
+  align-items: center;
+  width: 200%;
+  transform: translatex(-50%);
+  text-align: left;
+}
+.part-two {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.img-left img {
+  width: 100%;
+}
+.text h2 {
+  line-height: 80px;
+}
+.part-two .text {
+  margin: 20px;
+}
+.part-three {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.img-right {
+  display: flex;
+}
+.img-right img {
+  margin: 0 auto;
+  width: 50%;
+  transform: scale(2);
+  z-index: -1;
+}
+.form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "fn fe"
+    "n e"
+    "fm fm"
+    "me me"
+    "b b";
+  gap: 5px;
+}
+#forname {
+  grid-area: fn;
+
+  margin: auto;
+}
+#Name {
+  grid-area: n;
+}
+#foremail {
+  grid-area: fe;
+
+  margin: auto;
+}
+#email {
+  grid-area: e;
+  height: 30px;
+}
+#formsg {
+  grid-area: fm;
+  margin: auto;
+}
+#msg {
+  grid-area: me;
+  resize: none;
+}
+#send {
+  grid-area: b;
+  margin: 40px auto;
+}
+.form::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background: rgb(184, 182, 182);
+  bottom: 0;
+}
+.Networks {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.Networks button {
+  margin: 0 20px;
+  padding: 10px;
+}
+/* ------------------------Média query-------------------- */
+@media screen and (max-width: 650px) {
+  header,
+  .part-two,
+  .part-three {
+    display: block;
+  }
+  .header-img {
+    height: 50vh;
+  }
+  .text {
+    padding: 15px;
+  }
+  .img-right img {
+    display: none;
+  }
+  .img-left img {
+    display: none;
+  }
+  .Networks button {
+    margin: 0 10px;
+    padding: 10px;
+  }
+}
