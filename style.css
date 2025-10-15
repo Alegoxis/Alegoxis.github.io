@@ -1,1 +1,30 @@
-
+:root {
+  --color1: black;
+  --color2: green;
+  --color3: teal;
+}
+@font-face {
+  font-family: "saira";
+  src: url(assets/fonts/Saira-Regular.ttf);
+}
+* {
+  font-family: "saira";
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background: var(--color3);
+  height: 50px;
+}
+nav ul {
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+nav li {
+  margin: auto;
+  list-style: none;
+}
+nav li img {
+  width: 30px;
+}
