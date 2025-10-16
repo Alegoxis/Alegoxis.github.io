@@ -1,0 +1,22 @@
+:root {
+  --color1: black;
+  --color2: aquamarine;
+  --color3: teal;
+}
+header {
+  background: url(../assets/img/code-background.jpg) center / cover fixed;
+  min-height: 500px;
+  display: flex;
+}
+.title {
+  width: 100%;
+  display: flex;
+}
+.title h1 {
+  margin: auto;
+  padding: 7px;
+  color: var(--color2);
+  background: var(--color3);
+  border: 3px solid var(--color1);
+  border-radius: 20px;
+}
