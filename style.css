@@ -1,6 +1,6 @@
 :root {
   --color1: black;
-  --color2: green;
+  --color2: aquamarine;
   --color3: teal;
 }
 @font-face {
@@ -14,17 +14,41 @@
 }
 nav {
   background: var(--color3);
-  height: 50px;
+  height: 70px;
 }
 nav ul {
   margin: auto;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 nav li {
   margin: auto;
   list-style: none;
+  font-size: 1.5rem;
+  position: relative;
 }
 nav li img {
-  width: 30px;
+  height: 70px;
+}
+nav a {
+  color: var(--color2);
+  text-decoration: none;
+  cursor: pointer;
+}
+nav a img:first-child:hover {
+  transform: scale(1.2);
+  transition: 0.2s ease;
+}
+
+nav li:hover:before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background: var(--color2);
+  transform: translateY(-10px);
+}
+nav li:first-child:before {
+  background: none;
 }
