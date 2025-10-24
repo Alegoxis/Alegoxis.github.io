@@ -1,72 +1,104 @@
-:root {
-  --color1: black;
-  --color2: aquamarine;
-  --color3: teal;
-}
 @font-face {
-  font-family: "saira";
-  src: url(assets/fonts/Saira-Regular.ttf);
+  font-family: "Saira";
+  src: url(./assets/fonts/Saira-Regular.ttf);
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 * {
-  font-family: "saira";
   margin: 0;
   padding: 0;
+  font-family: "Saira", sans-serif;
+}
+body {
+  background-color: #383838;
+  height: 200vh;
+}
+.content {
+  color: #09fbba;
+  transition: 1s;
 }
 
-nav {
-  background: var(--color3);
-  height: 70px;
-}
-nav ul {
-  margin: auto;
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-nav li {
-  margin: auto;
-  list-style: none;
-  font-size: 1.5rem;
-  position: relative;
-}
-nav li img {
-  height: 70px;
-}
-nav a {
-  color: var(--color2);
-  text-decoration: none;
-  cursor: pointer;
-}
-nav a img:first-child:hover {
-  transform: scale(1.2);
-  transition: 0.2s ease;
-}
-
-nav li:hover:before {
-  content: "";
-  width: 100%;
-  height: 5px;
+#side-bar {
   position: absolute;
-  background: var(--color2);
-  transform: translateY(-10px);
+  width: 230px;
+  height: 100%;
+  background: teal;
+  top: 0;
+  left: -230px;
+  transition: 0.5s ease-out;
+  z-index: 4;
 }
-nav li:first-child:before {
-  background: none;
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 240px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
 }
-main {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-.projects-list {
-  background: darkcyan;
-  padding: 20px;
-}
-.projects-list a {
+.toggle-btn span {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background: gray;
   display: block;
-  background: var(--color3);
-  color: var(--color2);
-  padding: 5px 15px;
-  border-radius: 20px;
-  border: 3px solid var(--color1);
-  margin: 5px;
+  margin-top: 4px;
+  transition: 0.3s ease;
+}
+li {
+  color: #292929;
+  list-style: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding-left: 5px;
+}
+li:hover {
+  background: #292929;
+  color: #fcfcfb;
+}
+#side-bar.active {
+  left: 0;
+  position: fixed;
+}
+.active span {
+  position: absolute;
+}
+.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.active span:nth-child(2) {
+  opacity: 0;
+}
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.active ~ .content {
+  opacity: 0.3;
+}
+nav {
+  width: 100%;
+  background: teal;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  position: fixed;
+  top: 0;
+}
+h2 {
+  font-size: 2rem;
+  margin: 0 40px;
+}
+nav img {
+  height: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    justify-content: flex-end;
+  }
+  nav h2 {
+    margin-left: 15px;
+  }
 }

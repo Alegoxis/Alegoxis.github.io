@@ -2,34 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil - Le site de Alegoxis | by Alegoxis</title>
-    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Alegoxis | le site de Alegoxis</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="main.js" defer></script>
   </head>
+
   <body>
     <nav>
-      <ul>
-        <li>
-          <a href="index.html">
-            <img src="assets/img/logo.png" alt="Le logo du site." />
-          </a>
-        </li>
-        <li><a href="projets">Projets </a></li>
-        <li><a href="connexion/index.html">Se connecter / S'inscrire</a></li>
-        <li>
-          <a href="https://github.com/Alegoxis">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-      </ul>
+      <img src="assets/img/logo.png" alt="Logo du site web" />
+      <h2>Alegoxis</h2>
     </nav>
+    <div id="side-bar">
+      <div class="toggle-btn" id="btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./projets/">Projets</a></li>
+        <li>
+          <a href="./connexion/">Se connecter</a>
+        </li>
+        <li class="list"><a href="./connexion/">s'inscrire</a></li>
+      </ul>
+    </div>
+
+    <section class="content"></section>
   </body>
 </html>
