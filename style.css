@@ -16,7 +16,7 @@ body {
   height: 200vh;
 }
 .content {
-  color: #09fbba;
+  color: teal;
   transition: 1s;
 }
 
