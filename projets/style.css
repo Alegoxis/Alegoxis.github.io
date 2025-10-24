@@ -1,15 +1,28 @@
 @font-face {
   font-family: "Saira";
-  src: url(./assets/fonts/Saira-Regular.ttf);
-}
-a {
-  text-decoration: none;
-  color: black;
+  src: url(../assets/fonts/Saira-Regular.ttf);
 }
 * {
   margin: 0;
   padding: 0;
   font-family: "Saira", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+button {
+  background: teal;
+  padding: 5px 50px;
+  border-radius: 30px;
+  border: 3px solid black;
+  font-size: 1.5rem;
+  transition: 0.4s;
+}
+button:hover {
+  border: 3px solid cornsilk;
+  color: cornsilk;
+  background-color: cadetblue;
 }
 body {
   background-color: #383838;
@@ -17,6 +30,7 @@ body {
   margin-top: 70px;
 }
 .content {
+  color: teal;
   transition: 1s;
 }
 
@@ -93,7 +107,27 @@ h2 {
 nav img {
   height: 100%;
 }
-
+.top {
+  background: url(../assets/img/code-background.jpg) fixed center/cover;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-container {
+  background: #292929;
+  height: 40%;
+  width: 60%;
+  border-radius: 50px;
+  border: 5px solid teal;
+}
+.news-container p {
+  font-size: 3rem;
+}
+.news-container button {
+  margin: 20px auto;
+}
 @media screen and (max-width: 400px) {
   nav {
     justify-content: flex-end;
