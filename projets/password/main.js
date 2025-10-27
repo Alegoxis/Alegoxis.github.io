@@ -3,10 +3,10 @@ const form = document.querySelector("form");
 const inputs = document.querySelectorAll(
   'input[type="text"],input[type="password"]'
 );
-
+let passwordValue;
 let pseudo, password;
 let polo = false;
-
+let polohunger = 0;
 // *************** Functions *************
 const errordisplay = (tag, message, valid) => {
   const Container = document.querySelector("." + tag + "-container");
@@ -20,6 +20,23 @@ const errordisplay = (tag, message, valid) => {
     span.textContent = message;
   }
 };
+const PoloComportement = () => {
+  setInterval(() => {
+    if (passwordValue.match(/🪱/)) {
+      passwordValue = passwordValue.replace(/🪱/, "");
+      polohunger++;
+    } else {
+      alert(
+        "Polo est mort je t'avais dit de le garder avec de la nouriture !! Ducoup je reset ton mot de passe!!"
+      );
+      value = null;
+      polo = null;
+      polohunger = 0;
+    }
+    document.body.querySelector("#password").value = passwordValue;
+  }, 30000);
+};
+
 const pseudoChecker = (value) => {
   if (value.length > 0 && (value.length < 3 || value.length > 20)) {
     errordisplay("pseudo", "le pseudo doit faire entre 3 et 20 caractères");
@@ -37,6 +54,7 @@ const pseudoChecker = (value) => {
 };
 
 const passwordChecker = (value) => {
+  passwordValue = value;
   if (value.length <= 4) {
     errordisplay(
       "password",
@@ -66,12 +84,21 @@ const passwordChecker = (value) => {
     password = value;
   }
   if (!polo && value.match(/🥚/)) {
+    passwordValue = value;
+    PoloComportement();
     polo = true;
-  } else if (polo && !value.match(/🥚/)) {
+  } else if (
+    (polo && !value.match(/🥚/)) ||
+    (polo && !value.match(/🐣/)) ||
+    (polo && !value.match(/🐔/))
+  ) {
     alert(
       "Polo est mort je t'avais dit de le garder au frais!! Ducoup je reset ton mot de passe!!"
     );
-    value = null;
+    location.href = "./index.html";
+    polo = false;
+  } else if (value.match(/🥚/)) {
+    value = passwordValue;
   }
 };
 
