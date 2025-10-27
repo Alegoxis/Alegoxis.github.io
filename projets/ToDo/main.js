@@ -7,15 +7,16 @@ const list = document.body.querySelector("ul");
 
 const addThingInToDoList = (value) => {
   list.innerHTML += `<li>${value}</li>`;
+  const li = list.querySelectorAll("li");
 
-  const li = list.querySelector("li");
-
-  li.addEventListener("click", () => {
-    if (!li.classList.contains("checked")) {
-      li.classList.add("checked");
-    } else {
-      li.remove();
-    }
+  li.forEach((li) => {
+    li.addEventListener("click", () => {
+      if (!li.classList.contains("checked")) {
+        li.classList.add("checked");
+      } else {
+        li.remove();
+      }
+    });
   });
 };
 // ***************** Events **************
