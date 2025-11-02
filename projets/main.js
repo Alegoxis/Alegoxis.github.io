@@ -25,3 +25,4 @@ content.addEventListener("click", () => {
 bubble.addEventListener("click", () => {
   location.replace("./bubbles/index.html");
 });
+console.log();
