@@ -128,6 +128,19 @@ nav img {
 .news-container button {
   margin: 20px auto;
 }
+.projects {
+  border: 6px solid rgb(22, 174, 185);
+  border-radius: 50px;
+  padding: 20px;
+  margin: 10px;
+  /* background: yellow; */
+}
+#sub-title {
+  color: rgb(0, 183, 255);
+}
+section li {
+  color: aquamarine;
+}
 @media screen and (max-width: 400px) {
   nav {
     justify-content: flex-end;
