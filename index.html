@@ -8,11 +8,18 @@
 
     <link rel="stylesheet" href="./style.css" />
     <script src="main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <nav>
-      <img src="assets/img/logo.png" alt="Logo du site web" />
+      <img src="../assets/img/logo.png" alt="Logo du site web" />
       <h2>Alegoxis</h2>
     </nav>
     <div id="side-bar">
@@ -24,14 +31,21 @@
 
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="./projets/">Projets</a></li>
-        <li>
-          <a href="./connexion/">connexion</a>
-        </li>
-        <li class="list"><a href="./connexion/">s'inscrire</a></li>
+        <li><a href="index.html">Conte</a></li>
       </ul>
     </div>
 
-    <section class="content"></section>
+    <section class="content">
+      <div class="top">
+        <div class="news-container">
+          <p>Discover</p>
+          <button id="Bubble">Bubble</button>
+        </div>
+      </div>
+      <div class="projects">
+        <h2 id="sub-title">All our projects:</h2>
+        <ul id="project-list"></ul>
+      </div>
+    </section>
   </body>
 </html>

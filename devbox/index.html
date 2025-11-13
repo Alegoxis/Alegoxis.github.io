@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev box - code editor</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/Devbox-icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer type="module"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Code</li>
+        <li>Files</li>
+      </ul>
+    </nav>
+    <main>
+      <div class="left-part">
+        <div class="code-area">
+          <div class="block-display">
+            <div class="block-categories">
+              <div id="categories"></div>
+            </div>
+            <div class="block-container">
+              <canvas id="block-canvas"></canvas>
+            </div>
+          </div>
+          <div class="block-script"></div>
+        </div>
+      </div>
+      <div class="right-part">
+        <div class="screen-area">
+          <div class="info-container">
+            <ul>
+              <li><button>Save now</button></li>
+              <li>
+                <img
+                  src="./assets/img/Devbox-icon.png"
+                  alt="The DevBox icon"
+                  id="icon"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="script-area"></div>
+      </div>
+    </main>
+  </body>
+</html>

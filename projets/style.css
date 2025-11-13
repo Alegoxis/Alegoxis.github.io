@@ -1,36 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 @font-face {
   font-family: "Saira";
   src: url(../assets/fonts/Saira-Regular.ttf);
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 * {
   margin: 0;
   padding: 0;
   font-family: "Saira", sans-serif;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-button {
-  background: teal;
-  padding: 5px 50px;
-  border-radius: 30px;
-  border: 3px solid black;
-  font-size: 1.5rem;
-  transition: 0.4s;
-}
-button:hover {
-  border: 3px solid cornsilk;
-  color: cornsilk;
-  background-color: cadetblue;
-}
 body {
   background-color: #383838;
   height: 200vh;
   margin-top: 70px;
+  overflow: hidden;
+  background: white;
+}
+button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+button:hover {
+  cursor: pointer;
+  color: white;
 }
 .content {
-  color: teal;
   transition: 1s;
 }
 
@@ -107,39 +109,30 @@ h2 {
 nav img {
   height: 100%;
 }
-.top {
-  background: url(../assets/img/code-background.jpg) fixed center/cover;
-  height: 500px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  height: 100vh;
 }
-.news-container {
-  background: #292929;
-  height: 40%;
-  width: 60%;
-  border-radius: 50px;
-  border: 5px solid teal;
+.left-part {
+  background: white;
 }
-.news-container p {
-  font-size: 3rem;
+.project {
+  height: 600px;
 }
-.news-container button {
-  margin: 20px auto;
+.project-info {
+  padding-left: 20px;
+  background: rgb(10, 107, 75);
+  height: 40px;
 }
-.projects {
-  border: 6px solid rgb(22, 174, 185);
-  border-radius: 50px;
-  padding: 20px;
-  margin: 10px;
-  /* background: yellow; */
+#project {
+  height: 100%;
+  width: 100%;
 }
-#sub-title {
-  color: rgb(0, 183, 255);
-}
-section li {
-  color: aquamarine;
+.right-part {
+  background: blanchedalmond;
+  height: 300vh;
+  overflow: scroll;
 }
 @media screen and (max-width: 400px) {
   nav {
