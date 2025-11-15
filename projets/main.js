@@ -4,10 +4,13 @@ const sidebar = document.body.querySelector("#side-bar");
 const content = document.body.querySelector(".content");
 const projectClass = document.body.querySelector(".project");
 const buttonFullscreen = document.getElementById("fullscreen");
+const moreInfoBtn = document.getElementById("more-info");
+const rightPart = document.body.querySelector(".right-part");
 const params = new URLSearchParams(window.location.search);
 const projectUrl = params.get("src");
 
 let toggle = false;
+let moreInfo = false;
 
 // *************** Functions *************
 
@@ -19,6 +22,17 @@ btn.addEventListener("click", () => {
   } else {
     sidebar.classList.toggle("active");
     toggle = false;
+  }
+});
+moreInfoBtn.addEventListener("click", () => {
+  console.log("dktd");
+
+  if (moreInfo === false) {
+    rightPart.classList.toggle("button-clicked");
+    moreInfo = true;
+  } else {
+    rightPart.classList.toggle("button-clicked");
+    moreInfo = false;
   }
 });
 content.addEventListener("click", () => {
