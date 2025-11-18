@@ -11,13 +11,26 @@ const size = [51, 36];
 const jump = -11.5;
 const cTenth = canvas.width / 10;
 
+const pipeWidth = 78;
+const pipeGap = 270;
+const pipeLoc = () =>
+  Math.random() * (canvas.height - (pipeGap + pipeWidth)) + pipeWidth;
+
 let index = 0;
 let bestScore = 0;
-let currentScrore = 0;
+let currentScore = 0;
 let pipes = [];
 let flight;
 let flyHeight;
-
+const setup = () => {
+  currentScore = 0;
+  flight = jump;
+  flyHeight = canvas.height / 2 - size[1] / 2;
+  pipes = Array(3)
+    .fill()
+    .map((a, i) => [canvas.width + i * (pipeGap + pipeWidth), pipeLoc()]);
+  console.log(pipes);
+};
 const render = () => {
   index++;
   // background
@@ -32,17 +45,91 @@ const render = () => {
     canvas.width,
     canvas.height
   );
-  // bird
   ctx.drawImage(
     img,
-    432,
-    Math.floor((index % 9) / 3) * size[1],
-    ...size,
-    canvas.width / 2 - size[0] / 2,
-    flyHeight,
-    ...size
+    0,
+    0,
+    canvas.width,
+    canvas.height,
+    -(index * (speed / 2)) % canvas.width,
+    0,
+    canvas.width,
+    canvas.height
   );
-  flyHeight = canvas.height / 2 - size[1] / 2;
+  // bird & game screen
+  if (gamePlaying) {
+    ctx.drawImage(
+      img,
+      432,
+      Math.floor((index % 9) / 3) * size[1],
+      ...size,
+      cTenth,
+      flyHeight,
+      ...size
+    );
+    flight += gravity;
+    flyHeight = Math.min(flyHeight + flight, canvas.height - size[1]);
+  } else {
+    ctx.drawImage(
+      img,
+      432,
+      Math.floor((index % 9) / 3) * size[1],
+      ...size,
+      canvas.width / 2 - size[0] / 2,
+      flyHeight,
+      ...size
+    );
+    flyHeight = canvas.height / 2 - size[1] / 2;
+
+    ctx.fillText(`meilleur score : ${bestScore}`, 55, 245);
+    ctx.fillText("cliquez pour jouer", 48, 535);
+    ctx.font = "bold 30px courier";
+  }
+  if (gamePlaying) {
+    pipes.map((pipe) => {
+      pipe[0] -= speed;
+      // top pipe
+      ctx.drawImage(
+        img,
+        432,
+        588 - pipe[1],
+        pipeWidth,
+        pipe[1],
+        pipe[0],
+        0,
+        pipeWidth,
+        pipe[1]
+      );
+      // bottom pipe
+      ctx.drawImage(
+        img,
+        432 + pipeWidth,
+        108,
+        pipeWidth,
+        canvas.height - pipe[1] + pipeGap,
+        pipe[0],
+        pipe[1] + pipeGap,
+        pipeWidth,
+        canvas.height - pipe[1] + pipeGap
+      );
+      if (pipe[0] <= -pipeWidth) {
+        currentScore++;
+        bestScore = Math.max(bestScore, currentScore);
+
+        // remove pipe & create a new one
+        pipes = [
+          ...pipes.slice(1),
+          [pipes[pipes.length - 1][0] + pipeGap + pipeWidth, pipeLoc()],
+        ];
+        console.log(pipeWidth);
+      }
+    });
+  }
   window.requestAnimationFrame(render);
 };
+setup();
 img.onload = render;
+document.addEventListener("click", () => {
+  gamePlaying = true;
+});
+window.onclick = () => (flight = jump);
