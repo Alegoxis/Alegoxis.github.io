@@ -25,8 +25,6 @@ btn.addEventListener("click", () => {
   }
 });
 moreInfoBtn.addEventListener("click", () => {
-  console.log("dktd");
-
   if (moreInfo === false) {
     rightPart.classList.toggle("button-clicked");
     moreInfo = true;
@@ -43,7 +41,7 @@ content.addEventListener("click", () => {
 });
 window.addEventListener("load", () => {
   console.log(projectUrl);
-  projectClass.innerHTML = `<iframe src=".${projectUrl}" id="project"></iframe>`;
+  projectClass.innerHTML = `<iframe src="./${projectUrl}/" id="project"></iframe>`;
 });
 buttonFullscreen.addEventListener("click", () => {
   projectClass.requestFullscreen();

@@ -45,6 +45,7 @@ bubble.addEventListener("click", () => {
 });
 list.addEventListener("click", (e) => {
   let clicked = e.target.outerText;
+  console.log(clicked);
 
   location.replace(`./projets/?src=${folderList.visible[clicked]}`);
 });

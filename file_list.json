@@ -1,11 +1,14 @@
 {
     "visible": {
-        "bubbles":"/bubbles/",
-        "Gaming campus":"/gaming campus/",
-        "Helium":"/Hélium_Html/",
-        "password":"/password/",
-        "ToDo":"/ToDo/",
-        "Sandbox":"/SandBox/"
-
+        "bubbles":"bubbles",
+        "ToDo":"ToDo",
+        "Sandbox":"SandBox",
+        "Flappy bird":"flappy-bird"
+        
+    },
+    "invisible" :{
+        "Gaming campus":"gaming campus",
+        "Helium":"Hélium_Html",
+        "password":"password"
     }
 }
