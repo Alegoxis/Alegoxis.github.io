@@ -97,6 +97,7 @@ export default function logic(prompt) {
   if (toLearn) {
     learn(oldPromt, prompt);
     toLearn = false;
+    answer === "Merci, je le retien !";
   } else {
     oldPromt = prompt;
     prompt = understandPrompt(prompt);
