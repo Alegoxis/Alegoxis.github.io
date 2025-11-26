@@ -93,8 +93,3 @@ button:hover {
     display: none;
   }
 }
-@media screen and (max-height: 800px) {
-  body {
-    height: 800px;
-  }
-}
