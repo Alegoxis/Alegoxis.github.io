@@ -34,7 +34,7 @@ input[type="text"] {
   width: 100%;
   max-width: calc(100% - 200px);
   display: grid;
-  grid-template-rows: 1fr 10%;
+  grid-template-rows: 90% 10%;
 }
 .submit {
   color: whitesmoke;
@@ -91,5 +91,11 @@ button:hover {
   }
   .submit {
     display: none;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  body {
+    height: 50vh;
   }
 }
