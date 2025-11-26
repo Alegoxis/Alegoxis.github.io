@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+body {
+  background-color: #383838;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+}
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 70px;
+  background-color: #4e4e4e;
+  margin: 10px;
+}
+input[type="text"] {
+  border: none;
+  border-radius: 70px;
+  padding-left: 20px;
+  background-color: #4e4e4e;
+  color: white;
+  margin: 10px;
+  min-width: 0px;
+}
+
+.chat-container {
+  height: 100%;
+  width: 100%;
+  max-width: calc(100% - 200px);
+  display: grid;
+  grid-template-rows: 90% 10%;
+}
+.submit {
+  color: whitesmoke;
+  width: 40px;
+  height: 40px;
+}
+button:hover {
+  background: transparent;
+  border: 3px solid #1f1e1e;
+  color: #1f1e1e;
+}
+#promptForm {
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+#message {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+.bot {
+  color: black;
+  background: white;
+  padding: 10px;
+  border-radius: 10px 10px 10px 0px;
+  width: max-content;
+  margin: 5px;
+}
+.user {
+  color: black;
+  background: rgb(64, 64, 248);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px 10px 0px 10px;
+  width: max-content;
+  margin-left: auto;
+  transform: translateX(-7vh);
+}
+@media screen and (max-width: 530px) {
+  .chat-container {
+    max-width: calc(100% - 20px);
+  }
+  .user {
+    transform: none;
+  }
+  input[type="text"] {
+    padding: auto;
+  }
+}
+@media screen and (max-width: 530px) {
+  #prompt {
+    width: 90%;
+    min-height: 35px;
+  }
+  .submit {
+    display: none;
+  }
+}

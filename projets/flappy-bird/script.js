@@ -133,3 +133,4 @@ document.addEventListener("click", () => {
   gamePlaying = true;
 });
 window.onclick = () => (flight = jump);
+// video 50:02
