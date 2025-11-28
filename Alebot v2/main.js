@@ -4,6 +4,7 @@ const Form = document.getElementById("promptForm");
 const promptArea = document.getElementById("prompt");
 const ButtonSubmit = document.getElementById("buttonSubmit");
 const messageArea = document.getElementById("message");
+const chat = document.querySelector(".chat-container");
 console.log(messageArea);
 
 let prompt;
@@ -30,6 +31,11 @@ ButtonSubmit.addEventListener("onclick", () => {
   displayMessage(answer.answer, "bot");
 });
 
+promptArea.addEventListener("focus", () => {
+  setTimeout(() => {
+    chat.scrollTop = chat.scrollHeight;
+  }, 300); // laisse le temps au clavier de s'ouvrir
+});
 // ***************** code ****************
 
 //Put your code here
