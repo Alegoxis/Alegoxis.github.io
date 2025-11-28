@@ -50,10 +50,12 @@ button:hover {
   display: grid;
   grid-template-columns: 90% 10%;
 }
+.message-container {
+  overflow-y: auto;
+}
 #message {
   display: flex;
   flex-direction: column;
-  overflow: visible;
 }
 .bot {
   color: black;
@@ -62,6 +64,10 @@ button:hover {
   border-radius: 10px 10px 10px 0px;
   width: max-content;
   margin: 5px;
+  overflow-wrap: inherit;
+  max-width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .user {
   color: black;
@@ -72,6 +78,9 @@ button:hover {
   width: max-content;
   margin-left: auto;
   transform: translateX(-7vh);
+  max-width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 @media screen and (max-width: 530px) {
   .chat-container {
@@ -91,6 +100,9 @@ button:hover {
   }
   .submit {
     display: none;
+  }
+  #promptForm {
+    display: block;
   }
 }
 

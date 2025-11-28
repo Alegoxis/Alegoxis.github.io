@@ -78,6 +78,12 @@ function answerPrompt(prompt) {
 
   return answer;
 }
+function promptNormalizer(prompt) {
+  prompt = prompt.toLowerCase();
+  prompt = prompt.replace(/-/g, " ");
+  prompt = prompt.replace(/’/g, " ");
+  prompt = prompt.replace(/[?]/g, "=é");
+}
 async function learn(question, answer) {
   globalDb[question] = answer;
   const res = await fetch(`https://json.extendsclass.com/bin/5de28267dab0`, {
@@ -97,7 +103,7 @@ export default function logic(prompt) {
   if (toLearn) {
     learn(oldPromt, prompt);
     toLearn = false;
-    answer === "Merci, je le retien !";
+    answer = "Merci, je le retien !";
   } else {
     oldPromt = prompt;
     prompt = understandPrompt(prompt);
