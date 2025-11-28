@@ -2,7 +2,7 @@
 const btn = document.body.querySelector(".toggle-btn");
 const sidebar = document.body.querySelector("#side-bar");
 const content = document.body.querySelector(".content");
-const bubble = document.body.querySelector("#Bubble");
+const alebot = document.body.querySelector("#Alebot");
 const list = document.getElementById("project-list");
 
 let toggle = false;
@@ -40,8 +40,8 @@ content.addEventListener("click", () => {
     toggle = false;
   }
 });
-bubble.addEventListener("click", () => {
-  location.replace("./bubbles/index.html");
+alebot.addEventListener("click", () => {
+  location.replace("./Alebot%20v2/");
 });
 list.addEventListener("click", (e) => {
   let clicked = e.target.outerText;
